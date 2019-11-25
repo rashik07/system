@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "tutorial";
+$dbname = "rashik";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

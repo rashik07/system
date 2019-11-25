@@ -21,5 +21,5 @@
     
   // }
   
-  header("Location: charts.html");
+  header("Location: charts.php");
 ?>
