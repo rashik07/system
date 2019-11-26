@@ -157,6 +157,9 @@
           <canvas id="yearchart">
 
           </canvas>
+          <button type="button" id="download-pdf">
+            Download PDF
+          </button>
         </div>
       </div>
     </div>
@@ -211,6 +214,7 @@
 
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
@@ -287,6 +291,23 @@
         console.log(data);
       }
     });
+  }
+
+  document.getElementById('download-pdf').addEventListener("click", downloadPDF);
+
+  //donwload pdf from original canvas
+  function downloadPDF() {
+    var canvas = document.querySelector('#yearchart');
+    //creates image
+    var canvasImg = canvas.toDataURL("image/jpeg", 1.0);
+
+    //creates PDF from img
+    var doc = new jsPDF('landscape');
+    doc.setFontSize(20);
+    doc.text(15, 15, "Cool Chart");
+
+    doc.addImage(canvasImg, 'JPEG', 10, 10, 280, 150);
+    doc.save('canvas.pdf');
   }
 </script>
 
