@@ -15,7 +15,7 @@
 	</div>
 
 	
-     <form action="login_action.php" method="post" class="padding">
+     <form action="admin_login.php" method="post" class="padding">
 
 
      	

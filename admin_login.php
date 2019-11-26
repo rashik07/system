@@ -13,7 +13,7 @@
    
     if($count ==1){
 	    echo "Login Success";
-      header("Location: usercharts.php");
+      header("Location: dashboard.html");
      }
      else{
        echo "login failed";

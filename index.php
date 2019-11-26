@@ -49,7 +49,7 @@
 			</tr>
 		</table>
 
-		<button><a href="http://localhost/tutorial/admin.php">admin</a></button>
+		<button><a href="http://localhost/system-master/system-master/admin.php">admin</a></button>
 		</form>
 		
 
