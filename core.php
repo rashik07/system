@@ -71,4 +71,26 @@ function getStudents($major,$semester,$year_from,$year_to){
     echo json_encode($result);
 }
 
+
+function insert($major_id, $year, $semester, $student){
+    require('database.php');
+
+    $sql = "SELECT * FROM student WHERE major_id='$major_id' AND semester='$semester' AND year='$year'";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    if($stmt->rowCount() > 0){
+        $sql = "UPDATE student SET student_number = '$student' WHERE major_id = '$major_id' AND year = '$year' AND semester = '$semester'";
+    }
+    else{
+        $sql = "INSERT INTO student (major_id, year, semester, student_number) VALUES ('$major_id', '$year', '$semester', '$student')";
+    }
+
+    
+    $stmt = $conn->prepare($sql);
+    
+    return $stmt->execute();
+}
+
 ?>
